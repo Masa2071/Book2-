@@ -10,8 +10,8 @@
           	  <th><%= @user.name %></th>
             </tr>
             <tr>
-        	  <th>introduction</th>
-        	  <th><%= @user.introduction %></th>
+          	  <th>introduction</th>
+          	  <th><%= @user.introduction %></th>
           </tr>
         </tbody>
     </table>
@@ -37,11 +37,11 @@
   </thead>
 
   <tbody>
-      <% @user_book.each do |book| %>
+      <% @users.each do |user| %>
       <tr>
         <td></td>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to 'show', user_path(user) %></td>
       </tr>
       <% end %>
   </tbody>
