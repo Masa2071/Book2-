@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-xs-3">
+  <h2>User info</h2>
+    <!--<p><= attachment_image_tag user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" %></p>-->
+     <table class="table">
+     <tbody>
+      <tr></tr>
+      <tr>
+    	  <th>name</th>
+    	  <th><%= @user.name %></th>
+      </tr>
+      <tr>
+    	  <th>introduction</th>
+    	  <th><%= @user.introduction %></th>
+      </tr>
+    </tbody>
+    </table>
+  <div class="row">
+   <!--< if user.id ==  current_user.id %>-->
+   <!--   <= link_to "", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>-->
+   <!-- < else %>-->
+    <!--ログインしたユーザの詳細に戻る-->
+   <!--   <= link_to "", user_path(current_user),class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>-->
+   <!-- < end %>-->
+  </div>
+    <h2>New book</h2>
+    <%= render 'form', book: @book %>
+</div>
+
+
+
+
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <tr>
+        <td><%= @user_book.title %></td>
+        <td><%= @user_book.body %></td>
+        <% if @user.id == current_user.id %>
+        <td><%= link_to 'Edit', edit_book_path(@user_book) %></td>
+        <td><%= link_to 'Destroy', @user_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+  </tbody>
+</table>
+
