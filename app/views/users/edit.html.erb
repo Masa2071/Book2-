@@ -1,0 +1,14 @@
+<h1>Editing Book</h1>
+
+<%= form_with model:@user, local:true do |f| %>
+<%= f.label:name %><br/>
+<%= f.text_field:name %>
+
+<%= f.label:introduction %><br/>
+<%= f.text_field:introduction %>
+
+<div><%= f.submit '編集' %></div>
+<% end %>
+
+<!--<= link_to 'Show', @book %> |-->
+<%= link_to 'Back', books_path %>
