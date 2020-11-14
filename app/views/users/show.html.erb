@@ -40,7 +40,11 @@
       <% @user_book.each do |book| %>
       <tr>
         <td></td>
-        <td><%= book.title %></td>
+        <td>
+          <%= link_to book_path(book) do %>
+            <%= book.title %>
+          <% end %>
+          </td>
         <td><%= book.body %></td>
       </tr>
       <% end %>

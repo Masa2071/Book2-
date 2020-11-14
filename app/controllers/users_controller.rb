@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!#ログイン中のユーザーのみ
   def index
     @users = User.all
     @book = Book.new
